@@ -788,3 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e86f07b76db1741ab3c04ca463945b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  column: {fileID: 5685933749937431179, guid: 5470fb47a4fce8e4a8850080354f6106, type: 3}
+  maxTime: 1.5
+  minHeight: -0.7
+  maxHeight: 1
