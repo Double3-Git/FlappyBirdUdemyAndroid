@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &267135931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +300,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 315663020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614740570}
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &315663020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +787,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec847974f878094d95e9da169f2186c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreCanvas: {fileID: 267135930}
+  gameOverCanvas: {fileID: 1292500589}
 --- !u!1 &872481257
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50b5472a5504044ea76e80613814984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 614740570}
   speed: 3
 --- !u!50 &872481259
 Rigidbody2D:
@@ -949,7 +963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1292500590
 MonoBehaviour:
   m_ObjectHideFlags: 0

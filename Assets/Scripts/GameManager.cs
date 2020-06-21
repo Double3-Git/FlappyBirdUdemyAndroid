@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [Header("UI Settings")]
-    public GameObject scorePanel;
-    public GameObject gameOverPanel;
+    public GameObject scoreCanvas;
+    public GameObject gameOverCanvas;
 
 
     // Start is called before the first frame update
@@ -18,8 +19,13 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0;
-        scorePanel.SetActive(false);
-        gameOverPanel.SetActive(true);
+        scoreCanvas.SetActive(false);
+        gameOverCanvas.SetActive(true);
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
