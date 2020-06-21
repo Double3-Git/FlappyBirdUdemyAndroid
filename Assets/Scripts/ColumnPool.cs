@@ -21,12 +21,16 @@ public class ColumnPool : MonoBehaviour
     // Метод Start вызывается перед первым вызовом какого-либо метода Update
     private void Start()
     {
+        GameObject poolContainer = new GameObject("Pool Container");
+        poolContainer.transform.position = Vector2.zero;
+
         pooledColumns = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < poolSize; i++)
         {
-            tmp = Instantiate(column);
+            tmp = Instantiate(column, poolContainer.transform);
             tmp.SetActive(false);
+            
             pooledColumns.Add(tmp);
         }
     }
