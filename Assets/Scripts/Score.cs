@@ -17,6 +17,8 @@ public class Score : MonoBehaviour
     {
         score = 0;
         highScore = PlayerPrefs.GetInt("highScore");
+        // First time we need to display it anyway
+        panelScoreText.text = highScore.ToString();
     }
 
     // Update is called once per frame
