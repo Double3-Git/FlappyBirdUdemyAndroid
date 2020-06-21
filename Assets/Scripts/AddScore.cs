@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class AddScore : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    // OnTriggerEnter2D вызывается, когда Collider2D входит в триггер (только двухмерная физика)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Score.score++;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
