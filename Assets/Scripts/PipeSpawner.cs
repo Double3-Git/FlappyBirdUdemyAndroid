@@ -22,9 +22,11 @@ public class PipeSpawner : MonoBehaviour
         //Destroy(newColumn, 5);
 
         // Object pool style
-        GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
-        newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
+        //GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
+        //newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
 
+        // Functional style
+        CreateColumn();
     }
 
     // Update is called once per frame
@@ -38,10 +40,19 @@ public class PipeSpawner : MonoBehaviour
             //Destroy(newColumn, 5);
 
             // Object pool style
-            GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
-            newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
+            //GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
+            //newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
+
+            // Functional style
+            CreateColumn();
             timer = 0;
         }
         timer += Time.deltaTime;
+    }
+
+    void CreateColumn()
+    {
+        GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
+        newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
     }
 }
