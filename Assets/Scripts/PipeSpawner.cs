@@ -16,9 +16,14 @@ public class PipeSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject newColumn = Instantiate(column);
+        // Standart udemy decidion
+        //GameObject newColumn = Instantiate(column);
+        //newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
+        //Destroy(newColumn, 5);
+
+        // Object pool style
+        GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
         newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
-        Destroy(newColumn, 5);
 
     }
 
@@ -27,9 +32,14 @@ public class PipeSpawner : MonoBehaviour
     {
         if (timer > maxTime)
         {
-            GameObject newColumn = Instantiate(column);
+            // Standart udemy decidion
+            //GameObject newColumn = Instantiate(column);
+            //newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
+            //Destroy(newColumn, 5);
+
+            // Object pool style
+            GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
             newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
-            Destroy(newColumn, 5);
             timer = 0;
         }
         timer += Time.deltaTime;
