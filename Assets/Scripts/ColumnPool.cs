@@ -35,5 +35,20 @@ public class ColumnPool : MonoBehaviour
         }
     }
 
+    public GameObject GetPooledObject()
+    {
+        for (int i = 0; i < poolSize; i++)
+        {
+            if(!pooledColumns[i].activeInHierarchy)
+            {
+                return pooledColumns[i];
+            }
+        }
+
+        throw new System.Exception("Pool oversized. No inactive objects found");
+    }
+
+
+
 
 }
