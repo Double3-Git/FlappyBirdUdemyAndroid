@@ -17,5 +17,9 @@ public class Move : MonoBehaviour
     void Update()
     {
         transform.position = (Vector2)transform.position + Vector2.left * speed * Time.deltaTime;
+
+        // We need to deactivate the Invisible object to supor pooling
+        if (tag == "Column" && transform.position.x < -3f)
+            gameObject.SetActive(false);
     }
 }

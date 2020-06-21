@@ -48,11 +48,13 @@ public class PipeSpawner : MonoBehaviour
             timer = 0;
         }
         timer += Time.deltaTime;
+
     }
 
     void CreateColumn()
     {
         GameObject newColumn = ColumnPool.SharedInstance.GetPooledObject();
         newColumn.transform.position = (Vector2)transform.position + Vector2.up * Random.Range(minHeight, maxHeight);
+        newColumn.SetActive(true);
     }
 }
